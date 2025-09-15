@@ -76,3 +76,4 @@ data_ref = st.date_input("Escolha uma data", value=dt.date.today())
 nota = st.text_input("Anote algo sobre o jogo nesta data")
 if st.button("Salvar anotação"):
     st.success(f"Anotação salva para {data_ref:%d/%m/%Y}: {nota}")
+    #  primeiro commit
