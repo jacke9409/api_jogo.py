@@ -1,22 +1,8 @@
-# # api do zelda
-# # =========================
-# # Função para buscar dados em JSON da API Zelda
-# # =========================
-# def buscar_zelda_api(jogo):
-#     """
-#     Busca dados do jogo/anime Zelda na API Jikan.
-#     Retorna um dicionário com título, imagem, sinopse e link.
-#     """
-#     url = f"https://api.jikan.moe/v4/anime?q={jogo}&limit=1"
-#     resposta = requests.get(url)
-#     if resposta.status_code == 200:
-#         dados = resposta.json()  # JSON retornado pela API
-#         if dados["data"]:  # Confere se encontrou algum resultado
-#             anime = dados["data"][0]
-#             return {
-#                 "titulo": anime["title"],
-#                 "imagem": anime["images"]["jpg"]["image_url"],
-#                 "sinopse": anime["synopsis"],
-#                 "link": anime["url"]
-#             }
-#     return None
+# # links do site oficial
+# site oficial mine: https://www.minecraft.net/pt-br 
+
+# site oficial roblox: https://www.roblox.com/ 
+
+# site oficial fortnite: https://www.fortnite.com
+
+# site oficial zelda: https://www.nintendo.com/pt-pt/Jogos/Portal-Nintendo/Portal-The-Legend-of-Zelda/Portal-The-Legend-of-Zelda-627606.html?srsltid=AfmBOorV19QeXSh_Q7EEyerJ-K0duhYJfxmMUTt_GmWFMhQ1uuLi7rKp 
