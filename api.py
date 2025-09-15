@@ -174,3 +174,4 @@ games = {
         "link": "https://scarletviolet.pokemon.com/"
     }
 }
+#  adicionar api
