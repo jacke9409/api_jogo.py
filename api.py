@@ -1,25 +1,58 @@
-# #  quiz, infelizmente precisamos usar markdown para o nosso quiz
+# # # Mostra cada pergunta com opções de resposta e os erros e acertos em formas de gráfico, ai usamos o import plotly express as px que gera gáficos
+# # Mostra cada pergunta com opções de resposta
+# for i, q in enumerate(quiz, 1):
+#     resposta = st.radio(f"Q{i}. {q['pergunta']}", q["opcoes"], key=f"q{i}")
+#     st.session_state.respostas[f"q{i}"] = resposta
+
 # # =========================
-# # Quiz de 10 perguntas
+# # Finalizar o quiz
+# # =========================
+# if st.button("📊 Finalizar Quiz"):
+#     score = 0  # Contador de acertos
+#     resultados_detalhados = []  # Lista para guardar feedback de cada questão
+
+#     # Verifica cada resposta
+#     for i, q in enumerate(quiz, 1):
+#         resposta = st.session_state.respostas[f"q{i}"]  # Resposta escolhida
+#         correta = q["correta"]  # Resposta certa
+
+#         if resposta == correta:
+#             score += 1
+#             resultados_detalhados.append(
+#                 f"✅ Q{i}. {q['pergunta']} — Você respondeu **{resposta}** (Correto)"
+#             )
+#         else:
+#             resultados_detalhados.append(
+#                 f"❌ Q{i}. {q['pergunta']} — Você respondeu **{resposta}**, mas o certo é **{correta}**"
+#             )
+
+#     # Mostra pontuação final
+#     st.success(f"Você acertou {score} de {len(quiz)} perguntas! 🎉")
+
+#     # Mostra barra de progresso proporcional aos acertos
+#     st.progress(score / len(quiz))
+
+#     # Gráfico de pizza mostrando acertos e erros
+#     resultados = {
+#         "Acertos": score,
+#         "Erros": len(quiz) - score
+#     }
+#     fig = px.pie(
+#         names=list(resultados.keys()),    # "Acertos" e "Erros"
+#         values=list(resultados.values()), # Quantidade de cada
+#         color=list(resultados.keys()),    # Cores baseadas nas categorias
+#         color_discrete_map={"Acertos": "green", "Erros": "red"},
+#         title="Resultado do Quiz"
+#     )
+#     st.plotly_chart(fig, use_container_width=True)
+
+#     # Lista detalhada de respostas (acertos e erros)
+#     st.markdown("### 📋 Resultado detalhado")
+#     for r in resultados_detalhados:
+#         st.write(r)
+
+# # =========================
+# # Rodapé
 # # =========================
 # st.markdown("---")
-# st.markdown("### ❓ Quiz de Games (10 Perguntas)")
-
-# # Perguntas do quiz: cada item tem pergunta, opções e resposta correta
-# quiz = [
-#     {"pergunta": "Qual jogo foi lançado primeiro?", "opcoes": ["Minecraft", "Fortnite", "Zelda BOTW", "Roblox"], "correta": "Roblox"},
-#     {"pergunta": "Qual jogo é exclusivo da Nintendo?", "opcoes": ["Fortnite", "Minecraft", "Zelda BOTW", "Roblox"], "correta": "Zelda BOTW"},
-#     {"pergunta": "Qual desses jogos tem 'mundos infinitos'?", "opcoes": ["Roblox", "Minecraft", "Fortnite"], "correta": "Minecraft"},
-#     {"pergunta": "Qual é um Battle Royale?", "opcoes": ["Minecraft", "Zelda BOTW", "Fortnite"], "correta": "Fortnite"},
-#     {"pergunta": "Qual jogo permite criar experiências próprias?", "opcoes": ["Roblox", "Zelda BOTW", "Fortnite"], "correta": "Roblox"},
-#     {"pergunta": "Quem criou o Minecraft?", "opcoes": ["Markus 'Notch' Persson", "Shigeru Miyamoto", "Epic Games"], "correta": "Markus 'Notch' Persson"},
-#     {"pergunta": "Qual jogo tem física e clima afetando a jogabilidade?", "opcoes": ["Fortnite", "Zelda BOTW", "Roblox"], "correta": "Zelda BOTW"},
-#     {"pergunta": "Qual desses é considerado um dos jogos mais vendidos da história?", "opcoes": ["Minecraft", "Fortnite", "Roblox"], "correta": "Minecraft"},
-#     {"pergunta": "Qual desses jogos tem temporadas que mudam o mapa?", "opcoes": ["Fortnite", "Roblox", "Zelda BOTW"], "correta": "Fortnite"},
-#     {"pergunta": "Qual jogo saiu em 2006?", "opcoes": ["Roblox", "Minecraft", "Zelda BOTW"], "correta": "Roblox"},
-# ]
-
-# # Inicializa um dicionário de respostas no estado da sessão
-# if "respostas" not in st.session_state:
-#     st.session_state.respostas = {}
-#  essas são só as perguntas
+# st.caption("Games Hub em Streamlit — Quiz com pontuação, gráfico e feedback detalhado 🎮✨")
